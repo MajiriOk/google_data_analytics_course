@@ -1,0 +1,38 @@
+---
+title: "Penguins Plots"
+author: "Maj"
+date: "2023-07-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Penguin Plots: Practice analysis
+
+## Setting up my environment
+Notes: setting up my R environment by loading the 'tidyverse', 'palmerpenguins' and 'ggplot2' packages:
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(palmerpenguins)
+```
+
+## Including Plots
+
+Notes: plot included using ggplot2
+```{r}
+ggplot(data = penguins) + geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g))
+```
+
+##  Saving Plots
+Notes: you can save plots into a variable
+```{r}
+p <- ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  labs(title = "Palmer Penguins: Body Mass vs. Flipper Length", subtitle = "Sample of Three Penguin Species", caption = "Data collected by Dr. Kristen Gorman") +
+  annotate("text", x = 220, y = 3500, label = "The Gentoos are the largest", color = "purple", fontface = "bold", size = 4.5, angle = 25)
+
+```
+

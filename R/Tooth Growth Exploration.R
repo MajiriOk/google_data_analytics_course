@@ -1,0 +1,2 @@
+data("ToothGrowth")
+View(ToothGrowth)
